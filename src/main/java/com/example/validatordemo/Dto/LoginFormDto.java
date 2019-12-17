@@ -20,5 +20,4 @@ public class LoginFormDto {
     @NotBlank(message = "密码不能为空")
     @Length(min = 6,message = "密码最少6位")
     private String password;
-
 }
