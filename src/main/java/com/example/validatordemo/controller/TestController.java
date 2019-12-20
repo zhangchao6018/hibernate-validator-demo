@@ -17,8 +17,18 @@ import javax.validation.Valid;
 @RestController
 @RequestMapping("validator")
 public class TestController {
-    @PostMapping("/")
+    /**
+     * 传参示例
+     * {
+     * 	"name":"12zhangsan@163.com",
+     * 	"password":"123456",
+     * 	"date":"2019-01-01"
+     * }
+     * @param dto
+     * @return
+     */
+    @PostMapping("/test")
     public ResultMap<String> validator(@Valid @RequestBody LoginFormDto dto){
-        return ResultMap.success("hello"+dto.getUsername());
+        return ResultMap.success("hello"+dto.getUsername()+","+dto.getDate());
     }
 }
