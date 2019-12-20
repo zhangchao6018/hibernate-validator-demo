@@ -23,7 +23,8 @@ public class TestController {
      * {
      * 	"name":"12zhangsan@163.com",
      * 	"password":"123456",
-     * 	"date":"2019-01-01"
+     * 	"date":"2019-01-31",
+     * 	"datePattern":"2019-01-01"
      * }
      * @param dto
      * @return

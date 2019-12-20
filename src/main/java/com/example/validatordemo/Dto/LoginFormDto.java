@@ -9,7 +9,6 @@ import javax.validation.constraints.NotBlank;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.regex.Pattern;
-
 /**
  * @Description:
  * @Author: zhangchao22
@@ -40,6 +39,14 @@ public class LoginFormDto {
     @NotBlank(message = "日期格式不正确")//限制格式
     @Length(max = 10,min = 10,message = "日期格式不正确")//限制长度
     private String date;
+
+    /**
+     * 正则表达式
+     */
+    @javax.validation.constraints.Pattern(regexp = "\\d{4}(\\-|\\/|.)\\d{1,2}\\1\\d{1,2}" , message = "必须是该日期格式")
+    private String datePattern;
+
+
 
     public String getDate() {
         return date;
