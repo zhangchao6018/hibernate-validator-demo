@@ -8,6 +8,7 @@ import javax.validation.constraints.Email;
 import javax.validation.constraints.NotBlank;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
+import java.util.regex.Pattern;
 
 /**
  * @Description:
@@ -16,6 +17,17 @@ import java.text.SimpleDateFormat;
  **/
 @Data
 public class LoginFormDto {
+    /**
+     * 日期-正则匹配方式
+     * @param args
+     */
+    public static void main(String[] args) {
+
+        String pattern ="\\d{4}(\\-|\\/|.)\\d{1,2}\\1\\d{1,2}";
+        boolean isMatchDate1 = Pattern.matches(pattern, "2019-01-02 ");
+        System.out.println(isMatchDate1);
+    }
+
     @NotBlank(message = "用户名不能为空")
     @Email
     @JsonProperty("name")//入参映射成name

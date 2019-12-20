@@ -1,5 +1,6 @@
 package com.example.validatordemo.controller;
 
+import com.example.validatordemo.Annotation.HeaderChecker;
 import com.example.validatordemo.Dto.LoginFormDto;
 import com.example.validatordemo.result.ResultMap;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -28,6 +29,7 @@ public class TestController {
      * @return
      */
     @PostMapping("/test")
+    @HeaderChecker(headerNames = "test")
     public ResultMap<String> validator(@Valid @RequestBody LoginFormDto dto){
         return ResultMap.success("hello"+dto.getUsername()+","+dto.getDate());
     }
